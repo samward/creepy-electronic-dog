@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.all
+    @articles = ArticlesService.call
   end
 end
