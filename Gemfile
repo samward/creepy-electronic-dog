@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'capybara', '~> 3.32.1'
   gem 'factory_bot', '~> 5.2.0'
+  gem 'rails-controller-testing', '~> 1.0.4'
 end
 
 group :development do
