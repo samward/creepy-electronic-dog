@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_102411) do
-
+ActiveRecord::Schema.define(version: 2020_05_10_134722) do
   create_table "articles", force: :cascade do |t|
     t.integer "external_id"
     t.datetime "created_at", precision: 6, null: false
@@ -19,4 +18,11 @@ ActiveRecord::Schema.define(version: 2020_05_10_102411) do
     t.index ["external_id"], name: "index_articles_on_external_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.string "likeable_type", null: false
+    t.integer "likeable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
+  end
 end

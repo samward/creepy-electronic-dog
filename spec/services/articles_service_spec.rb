@@ -27,7 +27,7 @@ describe "ArticlesService" do
 
     context "when the endpoint returns valid data" do
       it "requests parses the data and creates the expected articles" do
-        expect{ subject }.to change{ Article.count }.by(2)
+        expect { subject }.to change { Article.count }.by(2)
       end
 
       context "when the same articles are returned in later requests" do
@@ -36,7 +36,7 @@ describe "ArticlesService" do
         end
 
         it "doesn't create any additional articles" do
-          expect{ subject }.to_not change{ Article.count }
+          expect { subject }.to_not change { Article.count }
         end
       end
 

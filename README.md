@@ -1,24 +1,25 @@
-# README
+# CreepyElectronicDog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+_CreepyElectronicDog_ is a Rails 6 application that reads article data from a [JSON endpoint](https://s3-eu-west-1.amazonaws.com/olio-staging-images/developer/test-articles-v2.json) and allows application users to "♥︎ like" the articles they see.  These likes are persisted in a local database and combined with any likes returned from the endpoint.
 
-Things you may want to cover:
+## Installation
+This application requires Ruby 2.7.1 to be installed on your machine.  Installation instructions for a range of operating systems can be found [here](https://www.ruby-lang.org/en/documentation/installation/).
 
-* Ruby version
+The other dependencies can be installed via [_Bundler_](https://bundler.io/).  To install Bundler, simply run `gem install bundler` on your terminal.
 
-* System dependencies
+Once Ruby and Bundler are installed, run `bundle install` from the root of this project.
 
-* Configuration
+## Running the application
 
-* Database creation
+The application uses _SQLite3_ for local database storage, which is preconfigured with Rails 6.  To start the application simply run `rails s` from the root of the project.
 
-* Database initialization
+You can then visit the articles page at http://localhost:3000
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running the test suite
 
-* Deployment instructions
+This application contains a combination of unit, integration and feature tests.
 
-* ...
+To run the basic test suite (without feature specs), use the command `rspec . --tag ~@js` from the project root
+
+To run the full test suite, simply run `rspec .`.  Note that your system will need to be configured with ChromeDriver.  Installation instructions for this can be found on the [ChromeDriver website](https://chromedriver.chromium.org/getting-started).

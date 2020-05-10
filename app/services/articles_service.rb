@@ -1,5 +1,4 @@
 class ArticlesService
-
   def self.call
     new.call
   end
@@ -8,9 +7,7 @@ class ArticlesService
     fetch_article_data
 
     parsed_articles.map do |article_json|
-      Article.find_or_create_by(external_id: article_json["id"]).tap do |article|
-        article.raw_json = article_json
-      end
+      Article.find_or_create_from_json(article_json)
     end
   end
 
